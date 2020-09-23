@@ -26,7 +26,27 @@ public class Lesson2 {
             rChStr[i] = chStr[(chStr.length - 1) - i];
         } 
         String rStr = new String(rChStr);
-        System.out.println("Перевертышь:" + rStr);
+        System.out.println("Перевертышь #1: " + rStr);
+        StringBuilder sbStr = new StringBuilder(answer);
+        System.out.println("Перевертышь #2: "+ sbStr.reverse().toString());
+        int firstSpace = answer.indexOf(" ");
+        int secondSpace = answer.indexOf(" ", firstSpace+1);
+        if(firstSpace == -1){
+            System.out.println("Второго слова нет. #1");
+        }
+        else if(secondSpace < 0){
+            System.out.println("Второе слово #1:" + answer.substring(firstSpace));
+        }
+        else{
+            System.out.println("Второе слово #1: " + answer.substring(firstSpace+1,secondSpace));
+        }
+        
+        String[] words = answer.split(" ");
+        if(words.length > 1 && words[1] != null){
+            System.out.println("Второе слово #2: " + words[1]);
+        } else {
+            System.out.println("Второго слова нет #2");
+        }
     }
     
 }
